@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .navbar {
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; 
+      padding: 10px 20px;
+    }
+    .navbar a {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .navbar .user-actions {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .user-actions a {
+      margin-left: 20px;
+      margin-right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="/articles">Ana Sayfa</a>
+    <div class="user-actions">
+      <% if user_signed_in? %>
+        <%= link_to "Profilini Düzenle", edit_user_registration_path %>
+        <%= button_to "Çıkış Yap", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Kayıt Ol", new_user_registration_path %>
+        <%= link_to "Giriş Yap", new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

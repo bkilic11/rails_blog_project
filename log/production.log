@@ -1,0 +1,64 @@
+I, [2023-08-15T13:29:23.901233 #9845]  INFO -- : [c5466c57-4481-41e3-ae38-e486d21266a0] Started GET "/articles" for 127.0.0.1 at 2023-08-15 13:29:23 +0300
+I, [2023-08-15T13:29:23.903452 #9845]  INFO -- : [c5466c57-4481-41e3-ae38-e486d21266a0] Processing by ArticlesController#index as HTML
+I, [2023-08-15T13:29:23.919053 #9845]  INFO -- : [c5466c57-4481-41e3-ae38-e486d21266a0]   Rendered articles/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1624)
+I, [2023-08-15T13:29:23.919236 #9845]  INFO -- : [c5466c57-4481-41e3-ae38-e486d21266a0]   Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 1681)
+I, [2023-08-15T13:29:23.919561 #9845]  INFO -- : [c5466c57-4481-41e3-ae38-e486d21266a0] Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 3208)
+F, [2023-08-15T13:29:23.921750 #9845] FATAL -- : [c5466c57-4481-41e3-ae38-e486d21266a0]   
+[c5466c57-4481-41e3-ae38-e486d21266a0] ActionView::Template::Error (There is an issue connecting to your database with your username/password, username: new_blog.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+[c5466c57-4481-41e3-ae38-e486d21266a0]     1: <%= @posts.each do |post| %>
+[c5466c57-4481-41e3-ae38-e486d21266a0]     2:   <div>
+[c5466c57-4481-41e3-ae38-e486d21266a0]     3:     <h2><%= post.title %></h2>
+[c5466c57-4481-41e3-ae38-e486d21266a0]     4:     <h4><%= post.content %></h4>
+[c5466c57-4481-41e3-ae38-e486d21266a0]   
+[c5466c57-4481-41e3-ae38-e486d21266a0] app/views/articles/index.html.erb:1
+I, [2023-08-15T13:29:27.819531 #9845]  INFO -- : [1ec0d069-54cb-4408-9b09-0e6ee6011960] Started GET "/articles" for 127.0.0.1 at 2023-08-15 13:29:27 +0300
+I, [2023-08-15T13:29:27.820686 #9845]  INFO -- : [1ec0d069-54cb-4408-9b09-0e6ee6011960] Processing by ArticlesController#index as HTML
+I, [2023-08-15T13:29:27.825119 #9845]  INFO -- : [1ec0d069-54cb-4408-9b09-0e6ee6011960]   Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1068)
+I, [2023-08-15T13:29:27.825239 #9845]  INFO -- : [1ec0d069-54cb-4408-9b09-0e6ee6011960]   Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1099)
+I, [2023-08-15T13:29:27.825365 #9845]  INFO -- : [1ec0d069-54cb-4408-9b09-0e6ee6011960] Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1292)
+F, [2023-08-15T13:29:27.826238 #9845] FATAL -- : [1ec0d069-54cb-4408-9b09-0e6ee6011960]   
+[1ec0d069-54cb-4408-9b09-0e6ee6011960] ActionView::Template::Error (There is an issue connecting to your database with your username/password, username: new_blog.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+[1ec0d069-54cb-4408-9b09-0e6ee6011960]     1: <%= @posts.each do |post| %>
+[1ec0d069-54cb-4408-9b09-0e6ee6011960]     2:   <div>
+[1ec0d069-54cb-4408-9b09-0e6ee6011960]     3:     <h2><%= post.title %></h2>
+[1ec0d069-54cb-4408-9b09-0e6ee6011960]     4:     <h4><%= post.content %></h4>
+[1ec0d069-54cb-4408-9b09-0e6ee6011960]   
+[1ec0d069-54cb-4408-9b09-0e6ee6011960] app/views/articles/index.html.erb:1
+I, [2023-08-15T13:29:28.386091 #9845]  INFO -- : [a52e9e62-7756-479a-a04c-193543418883] Started GET "/articles" for 127.0.0.1 at 2023-08-15 13:29:28 +0300
+I, [2023-08-15T13:29:28.386787 #9845]  INFO -- : [a52e9e62-7756-479a-a04c-193543418883] Processing by ArticlesController#index as HTML
+I, [2023-08-15T13:29:28.390182 #9845]  INFO -- : [a52e9e62-7756-479a-a04c-193543418883]   Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1068)
+I, [2023-08-15T13:29:28.390279 #9845]  INFO -- : [a52e9e62-7756-479a-a04c-193543418883]   Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1099)
+I, [2023-08-15T13:29:28.390435 #9845]  INFO -- : [a52e9e62-7756-479a-a04c-193543418883] Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1291)
+F, [2023-08-15T13:29:28.391325 #9845] FATAL -- : [a52e9e62-7756-479a-a04c-193543418883]   
+[a52e9e62-7756-479a-a04c-193543418883] ActionView::Template::Error (There is an issue connecting to your database with your username/password, username: new_blog.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+[a52e9e62-7756-479a-a04c-193543418883]     1: <%= @posts.each do |post| %>
+[a52e9e62-7756-479a-a04c-193543418883]     2:   <div>
+[a52e9e62-7756-479a-a04c-193543418883]     3:     <h2><%= post.title %></h2>
+[a52e9e62-7756-479a-a04c-193543418883]     4:     <h4><%= post.content %></h4>
+[a52e9e62-7756-479a-a04c-193543418883]   
+[a52e9e62-7756-479a-a04c-193543418883] app/views/articles/index.html.erb:1
+I, [2023-08-15T13:29:34.155822 #9845]  INFO -- : [2a45ed1e-9f7e-4d48-9c28-b7b529b6113f] Started GET "/articles/" for 127.0.0.1 at 2023-08-15 13:29:34 +0300
+I, [2023-08-15T13:29:34.156602 #9845]  INFO -- : [2a45ed1e-9f7e-4d48-9c28-b7b529b6113f] Processing by ArticlesController#index as HTML
+I, [2023-08-15T13:29:34.163793 #9845]  INFO -- : [2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]   Rendered articles/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1068)
+I, [2023-08-15T13:29:34.164039 #9845]  INFO -- : [2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]   Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1099)
+I, [2023-08-15T13:29:34.164266 #9845]  INFO -- : [2a45ed1e-9f7e-4d48-9c28-b7b529b6113f] Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1291)
+F, [2023-08-15T13:29:34.166166 #9845] FATAL -- : [2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]   
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f] ActionView::Template::Error (There is an issue connecting to your database with your username/password, username: new_blog.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]     1: <%= @posts.each do |post| %>
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]     2:   <div>
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]     3:     <h2><%= post.title %></h2>
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]     4:     <h4><%= post.content %></h4>
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f]   
+[2a45ed1e-9f7e-4d48-9c28-b7b529b6113f] app/views/articles/index.html.erb:1

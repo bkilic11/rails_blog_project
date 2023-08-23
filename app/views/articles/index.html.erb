@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1200px;
+      font-family: Arial, sans-serif;
+    }
+    .center {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .search-box .field {
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .search-box .field label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .search-box .field input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 300px;
+    }
+    .search-box .field button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    .search-box input {
+      width: 80%;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .search-box button {
+      border-radius: 5px;
+      height: 30px;
+      width: 10%;
+      background-color: green;
+      color: white;
+
+    }
+    .articles {
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+    .article {
+      border: 5px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .article h2 {
+      margin-bottom: 10px;
+    }
+    .article .image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .article .content {
+      margin-top: 10px;
+    }
+    .article .meta {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .article .actions {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .article .actions li {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger" style="color: red;">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+  
+  <div class="center">
+    <% if user_signed_in? %>
+      <%= link_to "Yeni makale ekle", new_article_path, class: 'btn btn-success' %>
+    <% end %>
+  </div>
+  
+  <div class="search-box">
+    <%= search_form_for @q  do |form| %>
+      <%= form.search_field :title_or_content_cont, placeholder: "Arama..." %>
+      <%= form.button "Ara", type: 'submit' %>
+    <% end %>
+  </div>
+  
+  <div class="articles">
+    <% @article.each do |article| %>
+      <div class="article">
+        <div class="center">
+          <h2><%= article.title %></h2>
+        </div>
+        <div class="image">
+          <%= image_tag(article.avatar, class: "image") if article.avatar.present? %>
+        </div>
+        <div class="content">
+          <p><%= article.content.html_safe %></p>
+        </div>
+        <div class="meta">
+          <span>Oluşturulma Tarihi: <%= article.created_at.strftime('%d-%m-%Y %H:%M:%S') %></span>
+          <ul class="actions">
+            <% if user_signed_in? %>
+              <% if current_user.role == 'admin' %>
+                <li><%= link_to 'Yazıyı Düzenle', edit_article_path(article) %></li>
+                <li><%= button_to 'Makaleyi sil', article_path(article), method: :delete %></li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
